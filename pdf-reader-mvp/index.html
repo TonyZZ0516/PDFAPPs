@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SwiftPDF MVP PRD & Android Design</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --ink: #172033;
+      --muted: #657189;
+      --line: #dfe6ef;
+      --panel: #ffffff;
+      --primary: #087f83;
+      --primary-dark: #075f63;
+      --accent: #315fbe;
+      --success: #14a36c;
+      --warn: #f59e0b;
+      --soft: #e9f7f7;
+      --blue-soft: #eaf1ff;
+      --radius: 8px;
+      --shadow: 0 14px 34px rgba(30, 42, 62, .12);
+      font-family: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); }
+    .page { max-width: 1480px; margin: 0 auto; padding: 32px 28px 56px; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 12px 30px rgba(15, 139, 141, .24);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    button { font-family: inherit; }
+    h1 { font-size: 30px; line-height: 1.15; letter-spacing: 0; }
+    h2 { font-size: 20px; margin: 34px 0 16px; letter-spacing: 0; }
+    h3 { font-size: 15px; letter-spacing: 0; }
+    p { color: var(--muted); line-height: 1.55; }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0 8px;
+    }
+
+    .summary-item, .spec-card, .flow-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .summary-item strong { display: block; font-size: 13px; margin-bottom: 8px; }
+    .summary-item span { color: var(--muted); font-size: 13px; line-height: 1.45; display: block; }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .spec-card .icon, .tool .icon, .action .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--soft);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .spec-card ul {
+      padding-left: 18px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .flow-card {
+      min-height: 100px;
+      position: relative;
+    }
+
+    .flow-card small { color: var(--primary); font-weight: 700; }
+    .flow-card h3 { margin-top: 8px; }
+    .flow-card p { margin-top: 6px; font-size: 12px; }
+
+    .logic-table {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .logic-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr 1.4fr 1.2fr;
+      border-top: 1px solid var(--line);
+      min-height: 62px;
+    }
+
+    .logic-row:first-child {
+      border-top: 0;
+      background: #eef6f7;
+      color: #244246;
+      font-weight: 800;
+      min-height: 42px;
+    }
+
+    .logic-cell {
+      padding: 12px 14px;
+      border-left: 1px solid var(--line);
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .logic-cell:first-child {
+      border-left: 0;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    .logic-row:first-child .logic-cell {
+      color: #244246;
+      font-weight: 850;
+    }
+
+    .design-board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(280px, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .screen-wrap h3 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 330px;
+      min-width: 280px;
+      aspect-ratio: 390 / 844;
+      margin: 0 auto;
+      border: 10px solid #111827;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .status {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      font-size: 11px;
+      color: #263244;
+      background: #fff;
+    }
+
+    .app {
+      height: calc(100% - 28px);
+      background: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .appbar {
+      padding: 14px 16px 10px;
+      background: #fff;
+      border-bottom: 1px solid #eef2f7;
+    }
+
+    .appbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .app-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .app-title strong {
+      font-size: 17px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .app-title span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .icon-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: #334155;
+      flex: 0 0 auto;
+    }
+
+    .content {
+      flex: 1;
+      overflow: hidden;
+      padding: 14px 16px 16px;
+    }
+
+    .search {
+      height: 42px;
+      border: 1px solid #e1e7f0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 14px;
+    }
+
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: #263244;
+      font: inherit;
+      min-width: 0;
+    }
+
+    .search input::placeholder {
+      color: var(--muted);
+      opacity: 1;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .quick {
+      background: #fff;
+      border: 1px solid #e4eaf3;
+      border-radius: 8px;
+      padding: 10px 8px;
+      min-height: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .quick:hover, .tool:hover, .icon-btn:hover, .bottom-tools button:hover {
+      border-color: rgba(15, 139, 141, .42);
+      box-shadow: 0 6px 16px rgba(15, 139, 141, .12);
+    }
+
+    .quick:focus-visible, .tool:focus-visible, .icon-btn:focus-visible,
+    .bottom-tools button:focus-visible, .primary-btn:focus-visible,
+    .secondary-btn:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, .24);
+      outline-offset: 2px;
+    }
+
+    .quick .qicon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: var(--soft);
+    }
+
+    .quick span { font-size: 11px; color: #263244; line-height: 1.25; }
+
+    .section-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 16px 0 10px;
+    }
+
+    .section-row strong { font-size: 14px; }
+    .section-row button {
+      border: 0;
+      background: transparent;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .file-list { display: grid; gap: 9px; }
+    .is-hidden { display: none !important; }
+
+    .file {
+      display: grid;
+      grid-template-columns: 38px 1fr 28px;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #e4eaf3;
+      border-radius: 8px;
+    }
+
+    .file-icon {
+      width: 38px;
+      height: 42px;
+      border-radius: 7px;
+      background: #fee2e2;
+      color: #dc2626;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .file strong {
+      display: block;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .file span { color: var(--muted); font-size: 10px; margin-top: 3px; display: block; }
+    .pro-chip {
+      background: #fff7ed;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      font-size: 10px;
+      padding: 4px 7px;
+      font-weight: 800;
+    }
+
+    .reader-page {
+      flex: 1;
+      margin: 12px 14px;
+      background: #ffffff;
+      border: 1px solid #dfe7f2;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(17, 24, 39, .08);
+      padding: 22px 20px;
+      overflow: hidden;
+    }
+
+    .doc-line { height: 8px; background: #e5eaf2; border-radius: 999px; margin-bottom: 10px; }
+    .doc-line.wide { width: 92%; }
+    .doc-line.mid { width: 72%; }
+    .doc-line.short { width: 45%; }
+    .doc-heading { height: 16px; width: 62%; background: #cbd5e1; border-radius: 999px; margin-bottom: 18px; }
+
+    .reader-bottom {
+      background: #fff;
+      border-top: 1px solid #e5eaf2;
+      padding: 9px 14px 14px;
+    }
+
+    .page-slider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .track { height: 4px; background: #e2e8f0; border-radius: 999px; flex: 1; overflow: hidden; }
+    .track span { display: block; width: 38%; height: 100%; background: var(--primary); }
+
+    .bottom-tools {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .bottom-tools button, .primary-btn, .secondary-btn {
+      border: 0;
+      border-radius: 8px;
+      min-height: 38px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .bottom-tools button {
+      background: #f1f5f9;
+      color: #334155;
+      display: grid;
+      place-items: center;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .tool {
+      padding: 12px;
+      min-height: 98px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #e4eaf3;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .tool strong { font-size: 13px; display: block; }
+    .tool span { color: var(--muted); font-size: 10px; margin-top: 4px; display: block; line-height: 1.35; }
+
+    .stepper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-top: 8px;
+    }
+
+    .stepper span {
+      height: 4px;
+      border-radius: 999px;
+      background: #dbe4ef;
+    }
+
+    .stepper span.active { background: var(--primary); }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .photo-tile {
+      aspect-ratio: 1 / 1.25;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #dbeafe, #ecfeff);
+      border: 1px solid #cfe2ff;
+      padding: 8px;
+      position: relative;
+    }
+
+    .photo-tile .num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .cta-bar {
+      margin-top: auto;
+      padding: 12px 16px 16px;
+      background: #fff;
+      border-top: 1px solid #e5eaf2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .primary-btn { background: var(--primary); color: #fff; }
+    .secondary-btn { background: #f1f5f9; color: #334155; }
+
+    .signature-pad {
+      height: 160px;
+      background: #fff;
+      border: 1px dashed #b8c4d6;
+      border-radius: 8px;
+      margin-top: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .signature-pad svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .floating-sign {
+      position: absolute;
+      left: 74px;
+      top: 284px;
+      width: 132px;
+      height: 54px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      background: rgba(255,255,255,.86);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-family: "Segoe Script", cursive;
+      font-size: 19px;
+      transform: rotate(-4deg);
+    }
+
+    .modal {
+      position: absolute;
+      inset: auto 14px 18px 14px;
+      background: #fff;
+      border: 1px solid #dfe6ef;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, .22);
+      padding: 16px;
+    }
+
+    .modal h3 { font-size: 18px; margin-bottom: 8px; }
+    .benefits { display: grid; gap: 8px; margin: 12px 0; }
+    .benefits span { font-size: 12px; color: #334155; }
+    .price { font-size: 22px; font-weight: 900; color: var(--primary); margin: 10px 0 12px; }
+
+    .empty-state {
+      margin-top: 40px;
+      text-align: center;
+      padding: 22px 12px;
+      color: var(--muted);
+    }
+
+    .empty-art {
+      width: 96px;
+      height: 96px;
+      border-radius: 26px;
+      margin: 0 auto 16px;
+      background: var(--blue-soft);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+    }
+
+    .permission-box {
+      padding: 14px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #dfe6ef;
+      margin-top: 16px;
+    }
+
+    .success-mark {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      margin: 52px auto 18px;
+    }
+
+    .tokens {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    .swatches { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .swatch { width: 54px; height: 54px; border-radius: 8px; border: 1px solid #dbe2eb; }
+    .type-sample { display: grid; gap: 8px; margin-top: 10px; }
+    .type-sample .t1 { font-size: 22px; font-weight: 800; color: var(--ink); }
+    .type-sample .t2 { font-size: 15px; font-weight: 700; color: var(--ink); }
+    .type-sample .t3 { font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 1200px) {
+      .summary { grid-template-columns: repeat(2, 1fr); }
+      .spec-grid { grid-template-columns: repeat(2, 1fr); }
+      .design-board { grid-template-columns: repeat(2, minmax(280px, 1fr)); }
+      .flow { grid-template-columns: repeat(3, 1fr); }
+      .tokens { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .page { padding: 20px 14px 40px; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .summary, .spec-grid, .design-board, .flow { grid-template-columns: 1fr; }
+      .phone { max-width: 390px; }
+    }
+  </style>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">PDF</div>
+        <div>
+          <h1>SwiftPDF MVP PRD & Android Design</h1>
+          <p>A realistic Android utility app for reading, signing, converting, and managing PDFs without an aggressive first-launch paywall.</p>
+          <div class="badge-row">
+            <span class="badge">Android MVP</span>
+            <span class="badge">Students + Office</span>
+        <span class="badge">Reader + Toolbox</span>
+            <span class="badge">Free + Pro</span>
+          </div>
+        </div>
+      </div>
+      <div class="badge">Updated: 2026-05-21</div>
+    </header>
+
+    <section class="summary">
+      <div class="summary-item">
+        <strong>Positioning</strong>
+        <span>A fast PDF reader that grows into a focused local document toolbox.</span>
+      </div>
+      <div class="summary-item">
+        <strong>Main User</strong>
+        <span>Students and office workers who handle PDFs, forms, notes, and receipts.</span>
+      </div>
+      <div class="summary-item">
+        <strong>Monetization</strong>
+        <span>Free basics with Pro limits for unlimited exports, HD output, and batch tools.</span>
+      </div>
+      <div class="summary-item">
+        <strong>Promise</strong>
+        <span>No forced first-launch paywall. Open, read, and act on documents in two taps.</span>
+      </div>
+    </section>
+
+    <h2>中文需求说明</h2>
+    <section class="logic-table" aria-label="中文需求说明">
+      <div class="logic-row">
+        <div class="logic-cell">模块</div>
+        <div class="logic-cell">用户需求</div>
+        <div class="logic-cell">核心功能</div>
+        <div class="logic-cell">商业化 / 状态</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">首页与阅读器</div>
+        <div class="logic-cell">用户需要快速找到最近 PDF，并在两步内进入阅读。</div>
+        <div class="logic-cell">最近文件、搜索、排序、重命名、分享、删除、书签、跳页、夜间模式。</div>
+        <div class="logic-cell">基础阅读免费；首次打开不弹强制订阅。</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Image to PDF</div>
+        <div class="logic-cell">用户需要把图片、截图、票据、课堂笔记快速整理成 PDF。</div>
+        <div class="logic-cell">相册多选、拍照导入、排序、裁剪、预览、导出、分享。</div>
+        <div class="logic-cell">每日 3 次免费导出；不限次数进入 Pro。</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">签名与批注</div>
+        <div class="logic-cell">用户需要在手机上完成合同、表格、作业等文件签名。</div>
+        <div class="logic-cell">手写签名、图片提取签名、拖动缩放、高亮、画笔、文本批注、保存副本。</div>
+        <div class="logic-cell">基础签名免费；签名库和无限签名进入 Pro。</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">PDF 工具箱</div>
+        <div class="logic-cell">用户希望在一个 App 内完成常见 PDF 工具任务，不再安装多个单点工具。</div>
+        <div class="logic-cell">压缩、合并、拆分、PDF 转图片、图片转 PDF、签名。</div>
+        <div class="logic-cell">基础单文件处理免费；批量、高质量、高清能力进入 Pro。</div>
+      </div>
+    </section>
+
+    <h2>Core MVP Features</h2>
+    <section class="spec-grid">
+      <article class="spec-card">
+        <div class="icon" data-lucide="folder-open"></div>
+        <h3>File Home + Reader</h3>
+        <ul>
+          <li>Recent PDFs, search, sort</li>
+          <li>Rename, share, delete</li>
+          <li>Zoom, jump, night mode</li>
+        </ul>
+      </article>
+      <article class="spec-card">
+        <div class="icon" data-lucide="images"></div>
+        <h3>Image to PDF</h3>
+        <ul>
+          <li>Gallery multi-select</li>
+          <li>Camera import</li>
+          <li>Reorder, crop, preview</li>
+        </ul>
+      </article>
+      <article class="spec-card">
+        <div class="icon" data-lucide="signature"></div>
+        <h3>Sign + Annotate</h3>
+        <ul>
+          <li>Draw or import signature</li>
+          <li>Highlight, text, pen</li>
+          <li>Save as copy</li>
+        </ul>
+      </article>
+      <article class="spec-card">
+        <div class="icon" data-lucide="wrench"></div>
+        <h3>PDF Toolbox</h3>
+        <ul>
+          <li>Compress, merge, split</li>
+          <li>Batch processing in Pro</li>
+          <li>Trigger paywall on limits</li>
+        </ul>
+      </article>
+      <article class="spec-card">
+        <div class="icon" data-lucide="image-down"></div>
+        <h3>PDF to Image</h3>
+        <ul>
+          <li>Select pages</li>
+          <li>JPG or PNG</li>
+          <li>HD export in Pro</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2>Primary Flow</h2>
+    <section class="flow">
+      <article class="flow-card">
+        <small>01</small>
+        <h3>Open App</h3>
+        <p>Home loads recent files or empty state within 3 seconds.</p>
+      </article>
+      <article class="flow-card">
+        <small>02</small>
+        <h3>Choose File</h3>
+        <p>User taps a recent PDF or imports a file.</p>
+      </article>
+      <article class="flow-card">
+        <small>03</small>
+        <h3>Read</h3>
+        <p>Reader opens with page controls and quick tools.</p>
+      </article>
+      <article class="flow-card">
+        <small>04</small>
+        <h3>Use Tool</h3>
+        <p>Sign, convert, compress, merge, split, or export images.</p>
+      </article>
+      <article class="flow-card">
+        <small>05</small>
+        <h3>Save Copy</h3>
+        <p>Non-destructive output with clear open/share actions.</p>
+      </article>
+      <article class="flow-card">
+        <small>06</small>
+        <h3>Upgrade</h3>
+        <p>Pro appears only when limits or premium quality are requested.</p>
+      </article>
+    </section>
+
+    <h2>Page Logic Matrix</h2>
+    <section class="logic-table" aria-label="Page logic matrix">
+      <div class="logic-row">
+        <div class="logic-cell">Page</div>
+        <div class="logic-cell">Default State</div>
+        <div class="logic-cell">Main Actions</div>
+        <div class="logic-cell">Edge / Pro State</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Home</div>
+        <div class="logic-cell">Shows recent PDFs first; if file permission is missing, show a permission card before scanning.</div>
+        <div class="logic-cell">Open file, search, sort, rename, share, delete, launch quick tools.</div>
+        <div class="logic-cell">Empty state offers Import PDF and Image to PDF, no paywall.</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Reader</div>
+        <div class="logic-cell">PDF opens to last page with top file actions and bottom reading tools.</div>
+        <div class="logic-cell">Search, bookmark, sign, annotate, open toolbox, jump page, night mode.</div>
+        <div class="logic-cell">Editing saves as copy; failed load shows retry and open-with options.</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Image to PDF</div>
+        <div class="logic-cell">Starts with gallery/camera import, then reorder, crop, preview, export.</div>
+        <div class="logic-cell">Add images, reorder pages, crop, delete, export PDF, share result.</div>
+        <div class="logic-cell">After 3 free exports, show Pro sheet with Continue free.</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Sign</div>
+        <div class="logic-cell">Create by drawing or import signature from image.</div>
+        <div class="logic-cell">Move, resize, place, confirm, save signed copy.</div>
+        <div class="logic-cell">Signature library and unlimited saved signatures are Pro.</div>
+      </div>
+      <div class="logic-row">
+        <div class="logic-cell">Toolbox</div>
+        <div class="logic-cell">Shows six focused tools, ordered by highest intent.</div>
+        <div class="logic-cell">Compress, merge, split, PDF to image, image to PDF, sign.</div>
+        <div class="logic-cell">Batch, HD, and high-quality compression trigger Pro.</div>
+      </div>
+    </section>
+
+    <h2>High-Fidelity Android Screens</h2>
+    <section class="design-board">
+      <div class="screen-wrap" id="home">
+        <h3>01 Home: Recent Files + Quick Tools</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <div class="app-title">
+                  <div class="logo" style="width:36px;height:36px;border-radius:10px;font-size:12px;">PDF</div>
+                  <div><strong>SwiftPDF</strong><span>Recent documents</span></div>
+                </div>
+                <button class="icon-btn" aria-label="Pro"><span data-lucide="sparkles"></span></button>
+              </div>
+              <label class="search" for="homeSearch"><span data-lucide="search"></span><input id="homeSearch" type="search" placeholder="Search PDF name, tool, or folder" autocomplete="off"></label>
+            </div>
+            <div class="content">
+              <div class="quick-grid">
+                <button class="quick" type="button" data-jump="image-to-pdf"><div class="qicon"><span data-lucide="images"></span></div><span>Image to PDF<br>3 left today</span></button>
+                <button class="quick" type="button" data-jump="create-signature"><div class="qicon"><span data-lucide="signature"></span></div><span>Sign PDF<br>Save copy</span></button>
+                <button class="quick" type="button" data-jump="toolbox"><div class="qicon"><span data-lucide="minimize-2"></span></div><span>Compress<br>Basic free</span></button>
+                <button class="quick" type="button" data-jump="toolbox"><div class="qicon"><span data-lucide="merge"></span></div><span>Merge</span></button>
+                <button class="quick" type="button" data-jump="toolbox"><div class="qicon"><span data-lucide="scissors"></span></div><span>Split</span></button>
+                <button class="quick" type="button" data-jump="toolbox"><div class="qicon"><span data-lucide="image-down"></span></div><span>PDF to Image</span></button>
+              </div>
+              <div class="section-row"><strong>Recent files</strong><button>Sort</button></div>
+              <div class="file-list" id="recentFiles">
+                <div class="file"><div class="file-icon">PDF</div><div><strong>Marketing Contract.pdf</strong><span>2.4 MB · 12 pages · opened today</span></div><span data-lucide="more-vertical"></span></div>
+                <div class="file"><div class="file-icon">PDF</div><div><strong>Lecture Notes Week 8.pdf</strong><span>7 pages · bookmarked · yesterday</span></div><span data-lucide="more-vertical"></span></div>
+                <div class="file"><div class="file-icon">PDF</div><div><strong>Receipt Bundle.pdf</strong><span>4 pages · compressed · 680 KB</span></div><span data-lucide="more-vertical"></span></div>
+              </div>
+              <div class="empty-state is-hidden" id="homeSearchEmpty">
+                <div class="empty-art"><span data-lucide="folder-search"></span></div>
+                <h3>No matching PDFs</h3>
+                <p>Try another file name or import a document.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="reader">
+        <h3>02 Reader: Two-Tap Reading Path</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn" aria-label="Back"><span data-lucide="chevron-left"></span></button>
+                <div class="app-title"><div><strong>Contract.pdf</strong><span>Page 3 of 12</span></div></div>
+                <button class="icon-btn" aria-label="More"><span data-lucide="more-vertical"></span></button>
+              </div>
+            </div>
+            <div class="reader-page">
+              <div class="doc-heading"></div>
+              <div class="doc-line wide"></div>
+              <div class="doc-line mid"></div>
+              <div class="doc-line wide"></div>
+              <div class="doc-line short"></div>
+              <br>
+              <div class="doc-line wide"></div>
+              <div class="doc-line wide"></div>
+              <div class="doc-line mid"></div>
+              <div class="doc-line wide"></div>
+              <br>
+              <div class="doc-line mid"></div>
+              <div class="doc-line wide"></div>
+              <div class="doc-line short"></div>
+            </div>
+            <div class="reader-bottom">
+              <div class="page-slider"><span>3</span><div class="track"><span></span></div><span>12</span></div>
+              <div class="bottom-tools">
+                <button aria-label="Search"><span data-lucide="search"></span></button>
+                <button aria-label="Bookmark"><span data-lucide="bookmark"></span></button>
+                <button aria-label="Sign"><span data-lucide="signature"></span></button>
+                <button aria-label="Annotate"><span data-lucide="highlighter"></span></button>
+                <button aria-label="Tools"><span data-lucide="wrench"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="toolbox">
+        <h3>03 Toolbox: Focused Utility Grid</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn"><span data-lucide="chevron-left"></span></button>
+                <div class="app-title"><div><strong>PDF Toolbox</strong><span>Common tasks, no clutter</span></div></div>
+                <span class="pro-chip">PRO</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="tools-grid">
+                <div class="tool"><div class="icon"><span data-lucide="images"></span></div><strong>Image to PDF</strong><span>3 free exports today</span></div>
+                <div class="tool"><div class="icon"><span data-lucide="signature"></span></div><strong>Sign PDF</strong><span>Draw or import signature</span></div>
+                <div class="tool"><div class="icon"><span data-lucide="minimize-2"></span></div><strong>Compress</strong><span>High quality is Pro</span></div>
+                <div class="tool"><div class="icon"><span data-lucide="merge"></span></div><strong>Merge PDF</strong><span>Combine selected files</span></div>
+                <div class="tool"><div class="icon"><span data-lucide="scissors"></span></div><strong>Split PDF</strong><span>Extract selected pages</span></div>
+                <div class="tool"><div class="icon"><span data-lucide="image-down"></span></div><strong>PDF to Image</strong><span>HD export with Pro</span></div>
+              </div>
+              <div class="permission-box">
+                <h3>File access explained</h3>
+                <p>SwiftPDF only scans documents so you can find, open, and edit local files faster.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="image-to-pdf">
+        <h3>04 Image to PDF: Reorder + Preview</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn"><span data-lucide="x"></span></button>
+                <div class="app-title"><div><strong>Image to PDF</strong><span>Step 2 of 4 · reorder pages</span></div></div>
+                <button class="icon-btn"><span data-lucide="camera"></span></button>
+              </div>
+              <div class="stepper"><span class="active"></span><span class="active"></span><span></span><span></span></div>
+            </div>
+            <div class="content">
+              <div class="section-row"><strong>Selected images</strong><button>Add</button></div>
+              <div class="image-grid">
+                <div class="photo-tile"><div class="num">1</div></div>
+                <div class="photo-tile"><div class="num">2</div></div>
+                <div class="photo-tile"><div class="num">3</div></div>
+                <div class="photo-tile"><div class="num">4</div></div>
+              </div>
+            </div>
+            <div class="cta-bar">
+              <button class="secondary-btn">Crop</button>
+              <button class="primary-btn">Preview</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="create-signature">
+        <h3>05 Sign: Create Signature</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn"><span data-lucide="chevron-left"></span></button>
+                <div class="app-title"><div><strong>Create signature</strong><span>Draw or import from image</span></div></div>
+                <button class="icon-btn"><span data-lucide="image-plus"></span></button>
+              </div>
+            </div>
+            <div class="content">
+              <div class="signature-pad">
+                <svg viewBox="0 0 300 160" fill="none">
+                  <path d="M42 104 C80 54, 84 142, 116 88 C143 40, 150 118, 176 92 C196 72, 212 88, 248 78" stroke="#087f83" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="quick-grid" style="grid-template-columns:repeat(3,1fr);">
+                <div class="quick"><div class="qicon"><span data-lucide="undo-2"></span></div><span>Undo</span></div>
+                <div class="quick"><div class="qicon"><span data-lucide="eraser"></span></div><span>Clear</span></div>
+                <div class="quick"><div class="qicon"><span data-lucide="palette"></span></div><span>Color</span></div>
+              </div>
+            </div>
+            <div class="cta-bar">
+              <button class="secondary-btn">Cancel</button>
+              <button class="primary-btn">Use signature</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="place-signature">
+        <h3>06 Sign: Place on PDF + Save Copy</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn"><span data-lucide="x"></span></button>
+                <div class="app-title"><div><strong>Place signature</strong><span>Drag to position</span></div></div>
+                <button class="icon-btn"><span data-lucide="check"></span></button>
+              </div>
+            </div>
+            <div class="reader-page">
+              <div class="doc-heading"></div>
+              <div class="doc-line wide"></div>
+              <div class="doc-line mid"></div>
+              <div class="doc-line wide"></div>
+              <br><br><br><br><br><br>
+              <div class="doc-line short"></div>
+            </div>
+            <div class="floating-sign">Alex Wu</div>
+            <div class="cta-bar">
+              <button class="secondary-btn">Adjust</button>
+              <button class="primary-btn">Save copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap" id="pro-limit">
+        <h3>07 Pro Limit: Upgrade Without Blocking</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <button class="icon-btn"><span data-lucide="chevron-left"></span></button>
+                <div class="app-title"><div><strong>Export PDF</strong><span>3 free exports used today</span></div></div>
+                <span class="pro-chip">LIMIT</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="image-grid">
+                <div class="photo-tile"><div class="num">1</div></div>
+                <div class="photo-tile"><div class="num">2</div></div>
+              </div>
+            </div>
+            <div class="modal">
+              <h3>Keep converting today</h3>
+              <p>Upgrade only when you need more. Your files stay available either way.</p>
+              <div class="benefits">
+                <span>Unlimited Image to PDF exports</span>
+                <span>HD PDF to Image output</span>
+                <span>Batch compress, merge, and split</span>
+                <span>No ads</span>
+              </div>
+              <div class="price">$4.99 / month</div>
+              <button class="primary-btn" style="width:100%;margin-bottom:8px;">Start Pro</button>
+              <button class="secondary-btn" style="width:100%;">Continue free</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-wrap">
+        <h3>08 Empty / Success States</h3>
+        <div class="phone">
+          <div class="status"><span>9:41</span><span>5G  84%</span></div>
+          <div class="app">
+            <div class="appbar">
+              <div class="appbar-row">
+                <div class="app-title"><div><strong>SwiftPDF</strong><span>Ready when your files are</span></div></div>
+                <button class="icon-btn"><span data-lucide="settings"></span></button>
+              </div>
+            </div>
+            <div class="content">
+              <div class="success-mark"><span data-lucide="check"></span></div>
+              <h3 style="text-align:center;font-size:18px;">PDF exported</h3>
+              <p style="text-align:center;margin:8px 18px 20px;">Receipt Bundle.pdf is ready. Open it now or share with another app.</p>
+              <div class="file"><div class="file-icon">PDF</div><div><strong>Receipt Bundle.pdf</strong><span>4 pages · 1.2 MB</span></div><span data-lucide="more-vertical"></span></div>
+              <div class="cta-bar" style="padding-left:0;padding-right:0;border:0;">
+                <button class="secondary-btn">Open</button>
+                <button class="primary-btn">Share</button>
+              </div>
+              <div class="empty-state" style="margin-top:10px;padding-bottom:0;">
+                <div class="empty-art"><span data-lucide="folder-search"></span></div>
+                <h3>No local PDFs yet</h3>
+                <p>Import a file or create one from images.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Design Tokens</h2>
+    <section class="tokens">
+      <article class="spec-card">
+        <h3>Colors</h3>
+        <div class="swatches">
+          <div class="swatch" style="background:#087f83"></div>
+          <div class="swatch" style="background:#315fbe"></div>
+          <div class="swatch" style="background:#14a36c"></div>
+          <div class="swatch" style="background:#f5f7fa"></div>
+          <div class="swatch" style="background:#172033"></div>
+        </div>
+      </article>
+      <article class="spec-card">
+        <h3>Typography</h3>
+        <div class="type-sample">
+          <span class="t1">Screen Title 22/800</span>
+          <span class="t2">Section Label 15/700</span>
+          <span class="t3">Body copy 13/400 with calm productivity tone.</span>
+        </div>
+      </article>
+      <article class="spec-card">
+        <h3>Components</h3>
+        <ul>
+          <li>8px radius for buttons, cards, tools</li>
+          <li>Icon-first tool buttons</li>
+          <li>Pro prompts only at limit moments</li>
+          <li>Save-as-copy default for edits</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons({ attrs: { width: 18, height: 18, strokeWidth: 2 } });
+    }
+
+    const homeSearch = document.querySelector('#homeSearch');
+    const recentFiles = [...document.querySelectorAll('#recentFiles .file')];
+    const searchEmpty = document.querySelector('#homeSearchEmpty');
+
+    homeSearch?.addEventListener('input', (event) => {
+      const query = event.target.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      recentFiles.forEach((file) => {
+        const matches = file.textContent.toLowerCase().includes(query);
+        file.classList.toggle('is-hidden', !matches);
+        if (matches) visibleCount += 1;
+      });
+
+      searchEmpty?.classList.toggle('is-hidden', visibleCount > 0);
+    });
+
+    document.querySelectorAll('[data-jump]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.jump);
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>

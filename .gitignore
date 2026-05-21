@@ -1,0 +1,21 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs and local environment
+*.log
+.env
+.env.*
+
+# JavaScript dependencies/build output
+node_modules/
+dist/
+build/
+.vite/
+
+# Cache/temp
+.cache/
+tmp/
+temp/
