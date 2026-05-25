@@ -1,0 +1,1252 @@
+{
+  "source_design": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\pdf-reader-mvp\\HI_FI_DESIGN_CN.html",
+  "design_board_png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\pdf-reader-mvp\\output\\playwright\\hi-fi-english-desktop-full.png",
+  "latest_automated_report": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\verification_report.md",
+  "profiles": {
+    "pixel7_standard": {
+      "home": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\home.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\home.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 150452,
+          "mean_rgb": [
+            238.37,
+            242.99,
+            245.48
+          ],
+          "luma_std": 32.82,
+          "token_coverage": {
+            "primary_teal": 1.9767,
+            "accent_blue": 0.1084,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.7007,
+            "app_bg": 93.5091,
+            "spec_bg": 93.5352,
+            "card_white": 91.9318,
+            "border_line": 1.7219
+          }
+        },
+        "xml_metrics": {
+          "node_count": 33,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "reader": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\reader.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\reader.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 81916,
+          "mean_rgb": [
+            240.16,
+            244.97,
+            246.93
+          ],
+          "luma_std": 30.78,
+          "token_coverage": {
+            "primary_teal": 2.5299,
+            "accent_blue": 0.0937,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.411,
+            "app_bg": 95.1113,
+            "spec_bg": 95.1232,
+            "card_white": 93.2958,
+            "border_line": 0.711
+          }
+        },
+        "xml_metrics": {
+          "node_count": 17,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "scan": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\scan.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\scan.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 140768,
+          "mean_rgb": [
+            238.61,
+            243.36,
+            245.94
+          ],
+          "luma_std": 32.37,
+          "token_coverage": {
+            "primary_teal": 2.1286,
+            "accent_blue": 0.1318,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.5685,
+            "app_bg": 93.8186,
+            "spec_bg": 93.8424,
+            "card_white": 90.4408,
+            "border_line": 1.4628
+          }
+        },
+        "xml_metrics": {
+          "node_count": 23,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\export.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\export.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 186359,
+          "mean_rgb": [
+            242.13,
+            244.66,
+            246.61
+          ],
+          "luma_std": 28.9,
+          "token_coverage": {
+            "primary_teal": 0.3944,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.6611,
+            "app_bg": 94.3161,
+            "spec_bg": 94.3578,
+            "card_white": 93.5047,
+            "border_line": 2.1258
+          }
+        },
+        "xml_metrics": {
+          "node_count": 34,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "settings": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\settings.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\pixel7_standard\\settings.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 149516,
+          "mean_rgb": [
+            242.22,
+            244.75,
+            247.07
+          ],
+          "luma_std": 27.71,
+          "token_coverage": {
+            "primary_teal": 0.3747,
+            "accent_blue": 0.0292,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.5958,
+            "app_bg": 95.0171,
+            "spec_bg": 95.0412,
+            "card_white": 94.9387,
+            "border_line": 1.4569
+          }
+        },
+        "xml_metrics": {
+          "node_count": 22,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      }
+    },
+    "small_360x640dp": {
+      "home": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\home.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\home.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 122849,
+          "mean_rgb": [
+            239.78,
+            243.39,
+            246.13
+          ],
+          "luma_std": 30.23,
+          "token_coverage": {
+            "primary_teal": 0.7407,
+            "accent_blue": 0.197,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.7151,
+            "app_bg": 94.2826,
+            "spec_bg": 94.3133,
+            "card_white": 91.7537,
+            "border_line": 1.7461
+          }
+        },
+        "xml_metrics": {
+          "node_count": 29,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "reader": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\reader.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\reader.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 84973,
+          "mean_rgb": [
+            235.03,
+            241.95,
+            243.95
+          ],
+          "luma_std": 38.88,
+          "token_coverage": {
+            "primary_teal": 4.146,
+            "accent_blue": 0.1561,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.6778,
+            "app_bg": 92.4906,
+            "spec_bg": 92.5094,
+            "card_white": 89.5412,
+            "border_line": 0.7358
+          }
+        },
+        "xml_metrics": {
+          "node_count": 17,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "scan": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\scan.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\scan.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 130255,
+          "mean_rgb": [
+            235.69,
+            241.73,
+            244.37
+          ],
+          "luma_std": 37.15,
+          "token_coverage": {
+            "primary_teal": 3.0245,
+            "accent_blue": 0.2387,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.6957,
+            "app_bg": 92.1017,
+            "spec_bg": 92.1293,
+            "card_white": 87.0565,
+            "border_line": 1.6328
+          }
+        },
+        "xml_metrics": {
+          "node_count": 22,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\export.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\export.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 136716,
+          "mean_rgb": [
+            240.72,
+            243.82,
+            245.78
+          ],
+          "luma_std": 30.25,
+          "token_coverage": {
+            "primary_teal": 0.6575,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.6885,
+            "app_bg": 94.3647,
+            "spec_bg": 94.4008,
+            "card_white": 93.6482,
+            "border_line": 1.7592
+          }
+        },
+        "xml_metrics": {
+          "node_count": 25,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export_scroll1": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\export_scroll1.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\export_scroll1.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 153326,
+          "mean_rgb": [
+            239.94,
+            243.04,
+            245.06
+          ],
+          "luma_std": 31.84,
+          "token_coverage": {
+            "primary_teal": 0.6178,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.7321,
+            "app_bg": 93.6129,
+            "spec_bg": 93.6548,
+            "card_white": 92.8946,
+            "border_line": 1.7077
+          }
+        },
+        "xml_metrics": {
+          "node_count": 28,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "settings": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\settings.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\small_360x640dp\\settings.xml",
+        "image": {
+          "width": 1080,
+          "height": 1920,
+          "file_size": 161795,
+          "mean_rgb": [
+            239.73,
+            242.63,
+            244.8
+          ],
+          "luma_std": 35.57,
+          "token_coverage": {
+            "primary_teal": 0.6085,
+            "accent_blue": 0.0589,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 1.0162,
+            "app_bg": 92.5062,
+            "spec_bg": 92.5513,
+            "card_white": 92.3992,
+            "border_line": 1.7548
+          }
+        },
+        "xml_metrics": {
+          "node_count": 22,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      }
+    },
+    "large_412x915dp": {
+      "home": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\home.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\home.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 149831,
+          "mean_rgb": [
+            238.38,
+            242.99,
+            245.48
+          ],
+          "luma_std": 32.82,
+          "token_coverage": {
+            "primary_teal": 1.9767,
+            "accent_blue": 0.1084,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.7007,
+            "app_bg": 93.5135,
+            "spec_bg": 93.5394,
+            "card_white": 91.9361,
+            "border_line": 1.723
+          }
+        },
+        "xml_metrics": {
+          "node_count": 33,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "reader": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\reader.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\reader.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 81979,
+          "mean_rgb": [
+            240.16,
+            244.97,
+            246.93
+          ],
+          "luma_std": 30.78,
+          "token_coverage": {
+            "primary_teal": 2.5299,
+            "accent_blue": 0.0937,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.411,
+            "app_bg": 95.1123,
+            "spec_bg": 95.1242,
+            "card_white": 93.2966,
+            "border_line": 0.7111
+          }
+        },
+        "xml_metrics": {
+          "node_count": 17,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "scan": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\scan.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\scan.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 140831,
+          "mean_rgb": [
+            238.61,
+            243.36,
+            245.94
+          ],
+          "luma_std": 32.37,
+          "token_coverage": {
+            "primary_teal": 2.1286,
+            "accent_blue": 0.1318,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.5685,
+            "app_bg": 93.8196,
+            "spec_bg": 93.8434,
+            "card_white": 90.4416,
+            "border_line": 1.4629
+          }
+        },
+        "xml_metrics": {
+          "node_count": 23,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\export.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\export.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 186403,
+          "mean_rgb": [
+            242.13,
+            244.67,
+            246.61
+          ],
+          "luma_std": 28.9,
+          "token_coverage": {
+            "primary_teal": 0.3944,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.6611,
+            "app_bg": 94.3171,
+            "spec_bg": 94.3588,
+            "card_white": 93.5055,
+            "border_line": 2.1259
+          }
+        },
+        "xml_metrics": {
+          "node_count": 34,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "settings": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\settings.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\large_412x915dp\\settings.xml",
+        "image": {
+          "width": 1080,
+          "height": 2400,
+          "file_size": 149556,
+          "mean_rgb": [
+            242.22,
+            244.75,
+            247.07
+          ],
+          "luma_std": 27.71,
+          "token_coverage": {
+            "primary_teal": 0.3747,
+            "accent_blue": 0.0292,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.5958,
+            "app_bg": 95.0181,
+            "spec_bg": 95.0422,
+            "card_white": 94.9395,
+            "border_line": 1.4571
+          }
+        },
+        "xml_metrics": {
+          "node_count": 22,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      }
+    },
+    "landscape_basic": {
+      "home": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\home.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\home.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 95151,
+          "mean_rgb": [
+            242.75,
+            246.06,
+            248.04
+          ],
+          "luma_std": 21.5,
+          "token_coverage": {
+            "primary_teal": 0.436,
+            "accent_blue": 0.0242,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.3107,
+            "app_bg": 96.2442,
+            "spec_bg": 96.2609,
+            "card_white": 96.1879,
+            "border_line": 1.7439
+          }
+        },
+        "xml_metrics": {
+          "node_count": 24,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "reader": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\reader.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\reader.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 50334,
+          "mean_rgb": [
+            246.16,
+            248.87,
+            250.28
+          ],
+          "luma_std": 17.21,
+          "token_coverage": {
+            "primary_teal": 0.3735,
+            "accent_blue": 0.0937,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.1066,
+            "app_bg": 98.2302,
+            "spec_bg": 98.2378,
+            "card_white": 96.8757,
+            "border_line": 0.5042
+          }
+        },
+        "xml_metrics": {
+          "node_count": 14,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "scan": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\scan.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\scan.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 107105,
+          "mean_rgb": [
+            231.55,
+            240.32,
+            242.77
+          ],
+          "luma_std": 37.99,
+          "token_coverage": {
+            "primary_teal": 4.9889,
+            "accent_blue": 0.0601,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.396,
+            "app_bg": 91.3261,
+            "spec_bg": 91.3459,
+            "card_white": 86.5614,
+            "border_line": 1.7433
+          }
+        },
+        "xml_metrics": {
+          "node_count": 21,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 92596,
+          "mean_rgb": [
+            243.32,
+            246.29,
+            247.97
+          ],
+          "luma_std": 22.54,
+          "token_coverage": {
+            "primary_teal": 0.3785,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.342,
+            "app_bg": 96.6569,
+            "spec_bg": 96.6784,
+            "card_white": 96.4047,
+            "border_line": 1.1439
+          }
+        },
+        "xml_metrics": {
+          "node_count": 20,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export_scroll1": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export_scroll1.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export_scroll1.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 92354,
+          "mean_rgb": [
+            243.56,
+            246.62,
+            248.27
+          ],
+          "luma_std": 19.69,
+          "token_coverage": {
+            "primary_teal": 0.3731,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.2348,
+            "app_bg": 97.4137,
+            "spec_bg": 97.4337,
+            "card_white": 96.587,
+            "border_line": 1.4013
+          }
+        },
+        "xml_metrics": {
+          "node_count": 23,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "export_scroll2": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export_scroll2.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\export_scroll2.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 93904,
+          "mean_rgb": [
+            243.0,
+            246.07,
+            247.81
+          ],
+          "luma_std": 21.35,
+          "token_coverage": {
+            "primary_teal": 0.3571,
+            "accent_blue": 0.0,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.289,
+            "app_bg": 97.0412,
+            "spec_bg": 97.0642,
+            "card_white": 96.1976,
+            "border_line": 1.4131
+          }
+        },
+        "xml_metrics": {
+          "node_count": 21,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      },
+      "settings": {
+        "status": "pass",
+        "render_gate": "pass",
+        "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\settings.png",
+        "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\automated_2026-05-23_220823\\screenshots\\landscape_basic\\settings.xml",
+        "image": {
+          "width": 2400,
+          "height": 1080,
+          "file_size": 95502,
+          "mean_rgb": [
+            243.19,
+            246.15,
+            247.92
+          ],
+          "luma_std": 24.57,
+          "token_coverage": {
+            "primary_teal": 0.3747,
+            "accent_blue": 0.0292,
+            "success_green": 0.0,
+            "warning_amber": 0.0,
+            "dark_text": 0.4422,
+            "app_bg": 95.6453,
+            "spec_bg": 95.6636,
+            "card_white": 95.5865,
+            "border_line": 1.682
+          }
+        },
+        "xml_metrics": {
+          "node_count": 19,
+          "missing_anchors": [],
+          "text_overlap_findings": []
+        }
+      }
+    }
+  },
+  "targeted_dialogs": {
+    "home_after_import": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_home_after_import.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_home_after_import.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 131843,
+        "mean_rgb": [
+          241.39,
+          244.2,
+          246.85
+        ],
+        "luma_std": 25.27,
+        "token_coverage": {
+          "primary_teal": 0.4563,
+          "accent_blue": 0.0242,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.551,
+          "app_bg": 95.3607,
+          "spec_bg": 95.3856,
+          "card_white": 95.2854,
+          "border_line": 1.4552
+        }
+      },
+      "xml_metrics": {
+        "node_count": 33,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "home_empty": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_home_repair.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_home_repair.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 149875,
+        "mean_rgb": [
+          238.37,
+          242.99,
+          245.48
+        ],
+        "luma_std": 32.82,
+        "token_coverage": {
+          "primary_teal": 1.9767,
+          "accent_blue": 0.1084,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.7007,
+          "app_bg": 93.5127,
+          "spec_bg": 93.5387,
+          "card_white": 91.9355,
+          "border_line": 1.7234
+        }
+      },
+      "xml_metrics": {
+        "node_count": 33,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "reader_imported": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_after_import.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_after_import.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 103866,
+        "mean_rgb": [
+          246.75,
+          248.33,
+          249.38
+        ],
+        "luma_std": 26.6,
+        "token_coverage": {
+          "primary_teal": 0.396,
+          "accent_blue": 0.0084,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.3865,
+          "app_bg": 96.3932,
+          "spec_bg": 96.4071,
+          "card_white": 96.3475,
+          "border_line": 0.9123
+        }
+      },
+      "xml_metrics": {
+        "node_count": 22,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "pdf_to_image_dialog": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_pdf_to_image_dialog.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_pdf_to_image_dialog.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 160133,
+        "mean_rgb": [
+          145.77,
+          148.34,
+          149.07
+        ],
+        "luma_std": 74.71,
+        "token_coverage": {
+          "primary_teal": 0.9083,
+          "accent_blue": 0.0,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.3825,
+          "app_bg": 31.7989,
+          "spec_bg": 31.8084,
+          "card_white": 31.7629,
+          "border_line": 0.4746
+        }
+      },
+      "xml_metrics": {
+        "node_count": 9,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "export_success": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_export_success.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_export_success.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 165906,
+        "mean_rgb": [
+          234.89,
+          241.79,
+          242.98
+        ],
+        "luma_std": 39.93,
+        "token_coverage": {
+          "primary_teal": 4.1441,
+          "accent_blue": 0.0,
+          "success_green": 0.0665,
+          "warning_amber": 0.0,
+          "dark_text": 0.9026,
+          "app_bg": 89.448,
+          "spec_bg": 89.4745,
+          "card_white": 89.367,
+          "border_line": 1.5376
+        }
+      },
+      "xml_metrics": {
+        "node_count": 28,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "export_recovery": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_export_recovery.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_export_recovery.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 152358,
+        "mean_rgb": [
+          235.43,
+          240.84,
+          241.67
+        ],
+        "luma_std": 39.57,
+        "token_coverage": {
+          "primary_teal": 4.3042,
+          "accent_blue": 0.0,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.6592,
+          "app_bg": 89.6031,
+          "spec_bg": 89.6358,
+          "card_white": 89.5286,
+          "border_line": 1.4993
+        }
+      },
+      "xml_metrics": {
+        "node_count": 25,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "draft_saved": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_draft_saved.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_draft_saved.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 151572,
+        "mean_rgb": [
+          235.13,
+          242.2,
+          243.35
+        ],
+        "luma_std": 39.0,
+        "token_coverage": {
+          "primary_teal": 4.3202,
+          "accent_blue": 0.0,
+          "success_green": 0.0665,
+          "warning_amber": 0.0,
+          "dark_text": 0.7095,
+          "app_bg": 89.6503,
+          "spec_bg": 89.6761,
+          "card_white": 89.5771,
+          "border_line": 1.5123
+        }
+      },
+      "xml_metrics": {
+        "node_count": 28,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "signature_placement": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_signature_placement.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_signature_placement.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 139361,
+        "mean_rgb": [
+          205.2,
+          206.73,
+          207.55
+        ],
+        "luma_std": 71.74,
+        "token_coverage": {
+          "primary_teal": 0.579,
+          "accent_blue": 0.0,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.4172,
+          "app_bg": 65.6926,
+          "spec_bg": 65.7114,
+          "card_white": 64.9304,
+          "border_line": 3.9552
+        }
+      },
+      "xml_metrics": {
+        "node_count": 14,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "scan_stepper": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_scan_stepper.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_scan_stepper.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 140921,
+        "mean_rgb": [
+          238.6,
+          243.36,
+          245.94
+        ],
+        "luma_std": 32.37,
+        "token_coverage": {
+          "primary_teal": 2.1286,
+          "accent_blue": 0.1318,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.5685,
+          "app_bg": 93.8178,
+          "spec_bg": 93.8418,
+          "card_white": 90.4399,
+          "border_line": 1.4634
+        }
+      },
+      "xml_metrics": {
+        "node_count": 23,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "scan_with_image": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_scan_with_image.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_scan_with_image.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 151599,
+        "mean_rgb": [
+          231.45,
+          239.37,
+          243.1
+        ],
+        "luma_std": 37.15,
+        "token_coverage": {
+          "primary_teal": 4.166,
+          "accent_blue": 0.0601,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.5789,
+          "app_bg": 92.0422,
+          "spec_bg": 92.071,
+          "card_white": 81.4846,
+          "border_line": 1.3616
+        }
+      },
+      "xml_metrics": {
+        "node_count": 33,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    },
+    "pro_dialog": {
+      "status": "pass",
+      "png": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_pro_dialog.png",
+      "xml": "C:\\Users\\mobu\\Desktop\\Trae\\Apps\\PDFAPPs\\android-app\\test-reports\\current_pro_dialog.xml",
+      "image": {
+        "width": 1080,
+        "height": 2400,
+        "file_size": 177959,
+        "mean_rgb": [
+          139.25,
+          142.35,
+          143.11
+        ],
+        "luma_std": 71.81,
+        "token_coverage": {
+          "primary_teal": 1.2409,
+          "accent_blue": 0.0,
+          "success_green": 0.0,
+          "warning_amber": 0.0,
+          "dark_text": 0.3649,
+          "app_bg": 27.9502,
+          "spec_bg": 27.9621,
+          "card_white": 27.9157,
+          "border_line": 0.1563
+        }
+      },
+      "xml_metrics": {
+        "node_count": 8,
+        "missing_anchors": [],
+        "text_overlap_findings": []
+      }
+    }
+  },
+  "design_coverage": [
+    {
+      "screen": "01 Home: Recent Files + Quick Tools",
+      "status": "pass",
+      "evidence": [
+        "current_home_after_import.png",
+        "current_home_after_import.xml"
+      ],
+      "notes": "Header, quick tools, search, sort, and imported recent-file row are visible in the emulator capture."
+    },
+    {
+      "screen": "02 Empty State: Import Prompt",
+      "status": "pass",
+      "evidence": [
+        "current_home_repair.png",
+        "current_home_repair.xml"
+      ],
+      "notes": "Clean-install empty state now has a stronger import prompt with primary Import PDF and secondary Image to PDF actions."
+    },
+    {
+      "screen": "03 Reader: Two-Tap Reading Path",
+      "status": "pass",
+      "evidence": [
+        "pixel7_standard/reader.png",
+        "current_ui.xml"
+      ],
+      "notes": "Reader renders PDF, page status, navigation, zoom, page jump, and tool dock."
+    },
+    {
+      "screen": "04 File Menu: Rename / Share / Delete",
+      "status": "pass",
+      "evidence": [
+        "screenshots_home_functional_2026-05-23/home_recent_actions_dialog.png"
+      ],
+      "notes": "Recent-file menu actions are implemented and ViewModel-covered; latest clean profile does not contain seeded recent rows."
+    },
+    {
+      "screen": "05 Toolbox: Focused Utility Grid",
+      "status": "pass",
+      "evidence": [
+        "pixel7_standard/export.png",
+        "current_export.xml"
+      ],
+      "notes": "Six-tool grid and Pro labels are present."
+    },
+    {
+      "screen": "06 Image to PDF: Reorder + Preview",
+      "status": "pass",
+      "evidence": [
+        "current_scan_stepper.png",
+        "current_scan_with_image.png"
+      ],
+      "notes": "Add images, camera entry, empty state, selected-image queue, reorder controls, rotate, crop, preview, and save-as-copy are captured."
+    },
+    {
+      "screen": "07 Create Signature: Draw or Import",
+      "status": "pass",
+      "evidence": [
+        "screenshots_smoke_2026-05-23_heartbeat/signature_canvas_dialog.png"
+      ],
+      "notes": "Draw and import signature flows are captured in earlier functional evidence."
+    },
+    {
+      "screen": "08 Place Signature: Save as Copy",
+      "status": "pass",
+      "evidence": [
+        "current_signature_placement.png",
+        "current_signature_placement.xml"
+      ],
+      "notes": "Placement buttons, direct drag-to-place preview, size slider, page-placement preview, and save-copy action are visible."
+    },
+    {
+      "screen": "09 Pro Limit: Continue Free Visible",
+      "status": "pass",
+      "evidence": [
+        "current_pro_dialog.png",
+        "current_pro_dialog.xml"
+      ],
+      "notes": "Contextual Pro prompt has Continue free and Start Pro."
+    },
+    {
+      "screen": "10 Export Success: Open / Share",
+      "status": "pass",
+      "evidence": [
+        "current_export_success.png",
+        "current_export_success.xml"
+      ],
+      "notes": "Dedicated export success state now shows result name plus Open, Share, and Back to tools actions."
+    },
+    {
+      "screen": "11 Permission: Ask When Needed",
+      "status": "pass",
+      "evidence": [
+        "camera_permission/scan_camera_granted.png"
+      ],
+      "notes": "Camera permission and file-access explanation states are covered."
+    },
+    {
+      "screen": "12 Recovery: Retry / Save Draft",
+      "status": "pass",
+      "evidence": [
+        "current_export_recovery.png",
+        "current_export_recovery.xml",
+        "current_draft_saved.xml"
+      ],
+      "notes": "Invalid page-range path now shows a dedicated Export failed state with Save draft and Retry, and Save draft transitions to a saved-result state."
+    }
+  ],
+  "summary": {
+    "compat_screens_passed": 23,
+    "compat_screens_total": 23,
+    "compat_pass_rate": 100.0,
+    "render_screens_passed": 23,
+    "render_screens_total": 23,
+    "render_pass_rate": 100.0,
+    "targeted_dialogs_passed": 11,
+    "targeted_dialogs_total": 11,
+    "design_coverage_counts": {
+      "pass": 12,
+      "partial": 0,
+      "gap": 0
+    },
+    "decision": "pass"
+  }
+}

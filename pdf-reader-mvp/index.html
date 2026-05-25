@@ -72,6 +72,7 @@
       color: var(--muted);
       font-size: 12px;
       white-space: nowrap;
+      text-decoration: none;
     }
 
     .summary {
@@ -131,6 +132,89 @@
     .flow-card small { color: var(--primary); font-weight: 700; }
     .flow-card h3 { margin-top: 8px; }
     .flow-card p { margin-top: 6px; font-size: 12px; }
+
+    .journey {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .journey-lane {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .lane-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .lane-title .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: var(--soft);
+      color: var(--primary);
+    }
+
+    .lane-title strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .lane-title span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .lane-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .lane-step {
+      min-height: 118px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .lane-step small {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .lane-step strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .lane-step p {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .lane-step.is-gate {
+      background: #f7fbfb;
+      border-color: #bfe3e4;
+    }
 
     .logic-table {
       background: var(--panel);
@@ -645,8 +729,37 @@
     @media (max-width: 720px) {
       .page { padding: 20px 14px 40px; }
       .topbar { align-items: flex-start; flex-direction: column; }
+      .brand { min-width: 0; width: 100%; }
+      .brand .logo { flex: 0 0 48px; width: 48px; }
+      .brand > div:not(.logo) { min-width: 0; }
       .summary, .spec-grid, .design-board, .flow { grid-template-columns: 1fr; }
       .phone { max-width: 390px; }
+      .journey-lane { grid-template-columns: 1fr; }
+      .lane-steps { grid-template-columns: 1fr; }
+      .logic-table {
+        display: grid;
+        gap: 10px;
+        border: 0;
+        background: transparent;
+        overflow: visible;
+      }
+      .logic-row {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        overflow: hidden;
+      }
+      .logic-row:first-child { display: none; }
+      .logic-cell {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+      .logic-cell:first-child {
+        border-top: 0;
+        background: #eef6f7;
+      }
     }
   </style>
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
@@ -662,12 +775,13 @@
           <div class="badge-row">
             <span class="badge">Android MVP</span>
             <span class="badge">Students + Office</span>
-        <span class="badge">Reader + Toolbox</span>
+            <span class="badge">Reader + Toolbox</span>
             <span class="badge">Free + Pro</span>
+            <a class="badge" href="HI_FI_DESIGN_CN.html">Hi-Fi Design</a>
           </div>
         </div>
       </div>
-      <div class="badge">Updated: 2026-05-21</div>
+      <div class="badge">Updated: 2026-05-22</div>
     </header>
 
     <section class="summary">
@@ -804,6 +918,125 @@
         <h3>Upgrade</h3>
         <p>Pro appears only when limits or premium quality are requested.</p>
       </article>
+    </section>
+
+    <h2>End-to-End App Flow</h2>
+    <section class="journey" aria-label="End-to-end app flow">
+      <div class="journey-lane">
+        <div class="lane-title">
+          <div class="icon"><span data-lucide="door-open"></span></div>
+          <div><strong>Entry</strong><span>Fast launch, local files first, no forced paywall.</span></div>
+        </div>
+        <div class="lane-steps">
+          <article class="lane-step">
+            <small>E1</small>
+            <strong>Launch</strong>
+            <p>Show Home immediately with recent files, quick tools, and search ready.</p>
+          </article>
+          <article class="lane-step is-gate">
+            <small>E2</small>
+            <strong>File Permission</strong>
+            <p>Ask only when scanning or importing files, then explain what is accessed.</p>
+          </article>
+          <article class="lane-step">
+            <small>E3</small>
+            <strong>Home State</strong>
+            <p>If files exist, show recents; if not, offer Import PDF and Image to PDF.</p>
+          </article>
+          <article class="lane-step">
+            <small>E4</small>
+            <strong>Return Path</strong>
+            <p>After every task, return with the new file visible and open/share actions.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="journey-lane">
+        <div class="lane-title">
+          <div class="icon"><span data-lucide="book-open"></span></div>
+          <div><strong>Read + Edit</strong><span>Reading is the default job; edits save as copies.</span></div>
+        </div>
+        <div class="lane-steps">
+          <article class="lane-step">
+            <small>R1</small>
+            <strong>Open PDF</strong>
+            <p>Open recent/imported PDF to the last page with page count and file actions.</p>
+          </article>
+          <article class="lane-step">
+            <small>R2</small>
+            <strong>Read</strong>
+            <p>Support zoom, jump page, continuous scroll, search, bookmark, and night mode.</p>
+          </article>
+          <article class="lane-step">
+            <small>R3</small>
+            <strong>Act on Page</strong>
+            <p>Launch sign, highlight, pen, text note, or toolbox from the reader bottom bar.</p>
+          </article>
+          <article class="lane-step is-gate">
+            <small>R4</small>
+            <strong>Save Copy</strong>
+            <p>Never overwrite the source file; confirm the saved copy and keep undo-safe exits.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="journey-lane">
+        <div class="lane-title">
+          <div class="icon"><span data-lucide="wrench"></span></div>
+          <div><strong>Tool Tasks</strong><span>Focused utilities with preview before export.</span></div>
+        </div>
+        <div class="lane-steps">
+          <article class="lane-step">
+            <small>T1</small>
+            <strong>Select Tool</strong>
+            <p>Choose Image to PDF, Sign, Compress, Merge, Split, or PDF to Image.</p>
+          </article>
+          <article class="lane-step">
+            <small>T2</small>
+            <strong>Import Input</strong>
+            <p>Use gallery, camera, recent PDFs, or current reader file as the input source.</p>
+          </article>
+          <article class="lane-step">
+            <small>T3</small>
+            <strong>Prepare</strong>
+            <p>Reorder, crop, select pages, adjust quality, place signature, or preview output.</p>
+          </article>
+          <article class="lane-step">
+            <small>T4</small>
+            <strong>Export</strong>
+            <p>Create the result, show progress, then offer Open, Share, Rename, and Find in Home.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="journey-lane">
+        <div class="lane-title">
+          <div class="icon"><span data-lucide="shield-check"></span></div>
+          <div><strong>Limits + Recovery</strong><span>Upgrade prompts never block basic file access.</span></div>
+        </div>
+        <div class="lane-steps">
+          <article class="lane-step is-gate">
+            <small>L1</small>
+            <strong>Limit Check</strong>
+            <p>Trigger Pro only on daily export limits, HD output, batch jobs, or saved libraries.</p>
+          </article>
+          <article class="lane-step">
+            <small>L2</small>
+            <strong>Pro Sheet</strong>
+            <p>Explain the benefit in context and keep Continue free available on the sheet.</p>
+          </article>
+          <article class="lane-step">
+            <small>L3</small>
+            <strong>Error State</strong>
+            <p>For failed loads or exports, show Retry, Open with, Save draft, and Contact support.</p>
+          </article>
+          <article class="lane-step">
+            <small>L4</small>
+            <strong>Task Resume</strong>
+            <p>Preserve selected files and edits when users return from Pro, permissions, or errors.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <h2>Page Logic Matrix</h2>

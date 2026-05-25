@@ -15,7 +15,35 @@ dist/
 build/
 .vite/
 
+# Android / Gradle
+.gradle/
+.idea/
+*.iml
+local.properties
+keystore.properties
+*.jks
+*.keystore
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+android-app/**/build/
+
+# Generated verification artifacts
+android-app/test-reports/**/*.png
+android-app/test-reports/**/*.jpg
+android-app/test-reports/**/*.jpeg
+android-app/test-reports/**/*.webp
+android-app/test-reports/**/*.xml
+android-app/test-reports/**/*.txt
+android-app/test-reports/automated_*/
+android-app/test-reports/camera_probe_*/
+android-app/test-reports/screenshots*/
+pdf-reader-mvp/output/
+
 # Cache/temp
 .cache/
+.codex-spreadsheet-build/
 tmp/
 temp/

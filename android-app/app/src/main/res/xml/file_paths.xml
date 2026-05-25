@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="exported_pdfs"
+        path="exported-pdfs/" />
+    <cache-path
+        name="scan_pages"
+        path="scan-pages/" />
+    <cache-path
+        name="exported_images"
+        path="exported-images/" />
+</paths>
